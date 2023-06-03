@@ -5,7 +5,7 @@ def import_date():
     valid_input = False
     while valid_input == False:
         # Keep running loop until user enters a date in the correct format.
-        imported_date_str = input('Enter a date in the format dd-mm-yy: ')
+        imported_date_str = input('Enter a date in the format dd-mm-yyyy: ')
         imported_date_list = imported_date_str.split('-') # Separate date into day, month, year
         if len(imported_date_list) == 3 and len(imported_date_list[0]) == 2 and len(imported_date_list[1]) == 2 and len(imported_date_list[2]) == 4:
             valid_input = True
@@ -28,7 +28,7 @@ def get_current_date():
 
 current_date = get_current_date()
 
-if (current_date[1] > imported_date[1]) or ((current_date[1] == imported_date[1]) and (current_date[0] >= import_date[0])):
+if (current_date[1] > imported_date[1]) or ((current_date[1] == imported_date[1]) and (current_date[0] >= imported_date[0])):
     # Check if given date is earlier in the year than current date.
     year_diff = current_date[2] - imported_date[2]
 else:
